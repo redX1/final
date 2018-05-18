@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Emission;
 use App\Models\Emission_Diffusion;
+use App\Models\Participant;
 use App\Models\Question;
 use App\Models\Reponse;
 use Illuminate\Http\Request;
@@ -130,8 +131,8 @@ class EmissionController extends Controller
         $emissions =Emission::all();
         $questions=Question::all();
         $reponses=Reponse::all();
-
-        return view('home',compact('questions','reponses','emissions'));
+        $participants = Participant::all();
+        return view('home',compact('questions','reponses','emissions','participants'));
     }
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Emission;
+use App\Models\Participant;
 use App\Models\Question;
 use App\Models\Reponse;
 
@@ -29,6 +30,7 @@ class HomeController extends Controller
         $emissions = Emission::all();
         $questions = Question::all();
         $reponses = Reponse::all();
-        return view('home',compact('emissions','questions','reponses'));
+        $participants = Participant::Joueur();
+        return view('home',compact('questions','reponses','emissions','participants'));
     }
 }

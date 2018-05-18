@@ -13,6 +13,7 @@ class Emission extends Model
         return Emission::all()->count();
     }
 
+
     public function emission_diffusions()
     {
         return $this->hasMany('App\Models\Emission_Diffusion');

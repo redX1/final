@@ -243,5 +243,6 @@
 
         });
     </script>
+    @yield('script' or ' ')
 </body>
 </html>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Emission;
 use App\Models\Emission_Diffusion;
+use App\Models\Participant;
 use App\Models\Question;
 use App\Models\Question_Diffusion;
 use App\Models\Reponse;
@@ -66,8 +67,8 @@ class QuestionDiffusionController extends Controller
                 $emissions =Emission::all();
                 $questions=Question::all();
                 $reponses=Reponse::all();
-
-                return view('home',compact('questions','reponses','emissions'));
+                $participants = Participant::all();
+                return view('home',compact('questions','reponses','emissions','participants'));
             }
 
         }
